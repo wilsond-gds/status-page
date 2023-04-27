@@ -1,0 +1,147 @@
+/* ENHANCEMENT: make header full width */
+.layout-content.status .masthead-container.premium {
+  max-width: none;
+}
+.layout-content.status .masthead-container.premium .masthead .images-container {
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: #1d70b8;
+}
+
+.font-largest { font-weight: 400;}
+
+.layout-content.status
+  .masthead-container.premium
+  .masthead
+  .text-container
+  .page-name {
+  /* AS23: remove text-overflow: ellipsis; so that text is always visible */
+  white-space: unset;
+  text-overflow: unset;
+  /* Control typography when content spreads over more than one line */
+  line-height: 1;
+  padding: 0.2rem 0;
+}
+
+/* link formatting */
+
+/* link styles copied from the current design system CSS */
+a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 3px solid rgba(0, 0, 0, 0);
+  color: #0b0c0c;
+  background-color: #fd0;
+  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+  text-decoration: none;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+a:link {
+  color: #1d70b8;
+  text-decoration: underline;
+}
+a:visited {
+  color: #4c2c92;
+  text-decoration: underline;
+}
+a:hover {
+  color: #003078;
+  text-decoration: underline;
+}
+a:active {
+  color: #0b0c0c;
+  text-decoration: underline;
+}
+
+/* ensure all links have underlines */
+a.no-link {
+  text-decoration: underline;
+}
+a.no-link:hover {
+  text-decoration: underline;
+}
+.layout-content.status.status-index
+  .incidents-list
+  .incident-title.impact-maintenance
+  a:hover {
+  color: #003078;
+  text-decoration: underline;
+}
+/* remove underline from only the 'subscribe to updates' button */
+#show-updates-dropdown {
+  text-decoration: none;
+}
+.status .container .page-footer span a:hover {
+  color: #003078;
+  text-decoration: underline;
+}
+
+/* ENHANCEMENT: tell users when pages open in a new tab */
+a[target="_blank"]:after {
+  content: " (opens in a new tab)";
+}
+
+/* colour contrast */
+
+.color-secondary {
+  color: #0b0c0c;
+}
+.layout-content.status .legend .legend-item,
+.layout-content.status .legend .legend-item.light {
+  color: #505a5f !important;
+  opacity: 1 !important;
+}
+
+/* ENHANCEMENT: harmonise rule/border usage with other GDS designs */
+.layout-content.status .incidents-list.format-expanded .status-day {
+  margin-top: 15px;
+}
+.layout-content.status .incidents-list.format-expanded .status-day .date {
+  border-bottom-width: 0;
+  border-top-width: 1px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 10px;
+  font-weight: 700;
+}
+.incident-container {
+  padding: 20px 0 45px 0;
+}
+
+/* ENHANCEMENT: use the notification banner pattern for the current state */
+
+.layout-content.status.status-index .page-status.status-none {
+  background-color: white;
+  border: 5px solid #00703c;
+  border-radius: 0;
+  text-shadow: none;
+  padding: 0;
+}
+.layout-content.status.status-index .page-status.status-none > span {
+  color: #00703c;
+  position: static;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0 20px 20px 20px;
+  display: block;
+  line-height:1.05;
+}
+.layout-content.status.status-index .page-status.status-none:before {
+  content: "Current status";
+  text-transform: none;
+  display: block;
+  background-color: #00703c;
+  color: white;
+  padding: 2px 0 7px 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
