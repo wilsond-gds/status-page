@@ -15,12 +15,15 @@
           <span class="last-updated-stamp  font-small"></span>
         </div>
     <script>
-    // doesn't read the full title, jumps into the page content
+        // Add the current status to the <title> tag so that screen readers report on page load
+    // During testing VoiceOver doesn't read the full title and then jumps into the page content
     const collectInformation = document.querySelector('.status.font-large').textContent;
     document.title=collectInformation+" JavaScript document title";
 
-javascript: (() => { var head  = document.getElementsByTagName('head')[0]; var meta = document.createElement('meta'); meta.setAttribute('http-equiv',"Content-Security-Policy"); meta.setAttribute('content',"style-src http://localhost:8080"); var link  = document.createElement('link'); link.rel  = 'stylesheet'; link.type = 'text/css'; link.href = 'http://localhost:8080/stylesheet.css?cache='+(Math.random()); link.media = 'all'; head.appendChild(meta); head.appendChild(link); })();
-    
+    // testing local CSS injection snippet
+        // start the web server with npx http-server in the root directory
+        // USE FIREFOX: Chrome will not allow this technique
+// javascript: (() => { var head  = document.getElementsByTagName('head')[0]; var meta = document.createElement('meta'); meta.setAttribute('http-equiv',"Content-Security-Policy"); meta.setAttribute('content',"style-src http://localhost:8080"); var link  = document.createElement('link'); link.rel  = 'stylesheet'; link.type = 'text/css'; link.href = 'http://localhost:8080/stylesheet.css?cache='+(Math.random()); link.media = 'all'; head.appendChild(meta); head.appendChild(link); })();
 
     </script>
 </body>
