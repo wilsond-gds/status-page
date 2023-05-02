@@ -2,6 +2,8 @@
 body {
     line-height: 1.35;
     font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 .font-regular {
@@ -180,7 +182,7 @@ a[target="_blank"]:after {
     white-space: unset;
 }
 
-
+/* An example of the incident page: https://status.account.gov.uk/incidents/jq7trv19gyf1 */
 /* ENHANCEMENT: add heading to incident pages */
 
 body.status.incident:before {
