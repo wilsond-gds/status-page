@@ -6,6 +6,10 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+body, *:before, *:after, form > * {
+    font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif !important; /* standardise typefaces */
+}
+
 .font-regular {
     font-size: 1.2rem;
     line-height: 1.35;
@@ -143,29 +147,29 @@ a[target="_blank"]:after {
 
 /* ENHANCEMENT: use the notification banner pattern for the current state */
 
-.layout-content.status.status-index .page-status.status-none {
-    background-color: white;
-    border: 5px solid #00703c;
+.layout-content.status.status-index .page-status {
+    background-color: white !important;
+    border: 5px solid #1d70b8;
     border-radius: 0;
     text-shadow: none;
     padding: 0;
 }
 
-.layout-content.status.status-index .page-status.status-none > span {
-    color: #00703c;
+.layout-content.status.status-index .page-status > span {
     position: static;
     font-size: 2rem;
     font-weight: 700;
     padding: 0 20px 20px 20px;
     display: block;
     line-height: 1.05;
+    color: #0b0c0c !important;
 }
 
-.layout-content.status.status-index .page-status.status-none:before {
+.layout-content.status.status-index .page-status:before {
     content: "Current status";
     text-transform: none;
     display: block;
-    background-color: #00703c;
+    background-color: #1d70b8;
     color: white;
     padding: 2px 0 7px 20px;
     margin-bottom: 20px;
@@ -245,3 +249,23 @@ body.status.incident:before {
         width: auto !important;
     }
 }
+
+/* The non-historical component status states */
+.component-status {font-weight: 700; }
+/* degraded performance */
+.components-container .component-inner-container.status-yellow .component-status { color:#b58840; } /* GDS brown */
+/* partial outage */
+.components-container .component-inner-container.status-orange .component-status { color:#b58840; } /* GDS brown */
+/* major outage */
+.components-container .component-inner-container.status-red .component-status { color:#d4351c; ;} /* GDS error */
+/* under maintenance */
+.components-container .component-inner-container.status-blue .component-status { color:#1d70b8; } /* GDS blue */
+/* operational */
+.components-container .component-inner-container.status-green .component-status { color:#00703c; } /* GDS green */
+
+/* reduce the visual weight of the child status items */
+.layout-content.status.status-index .components-section .component-container .child-components-container .component-inner-container .name {
+    white-space:unset!important; font-weight:400; color: #505a5f;
+}
+/* use Roman font weight for service names */
+.layout-content.status.status-index .components-section .component-container .name {font-weight:400; }
