@@ -6,9 +6,14 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-body, *:before, *:after, form > * {
-    font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif !important; /* standardise typefaces */
-}
+/* ENHANCEMENT: style the subscribe form predictably */
+
+ form > * { font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif; }
+ form input.flat-button {letter-spacing: 0; box-shadow: none;  }
+ form input.flat-button:hover {background-color: #ffdd00; color: #0b0c0c; box-shadow: none;}
+ a.flat-button {letter-spacing: 0; color:white; box-shadow: none;}
+ a.flat-button:link {color:white;}
+ a.flat-button:hover {background-color: #ffdd00; color: #0b0c0c; box-shadow: none;}
 
 .font-regular {
     font-size: 1.2rem;
@@ -251,6 +256,7 @@ body.status.incident:before {
 }
 
 /* The non-historical component status states */
+
 .component-status {font-weight: 700; }
 /* degraded performance */
 .components-container .component-inner-container.status-yellow .component-status { color:#b58840; } /* GDS brown */
@@ -263,9 +269,22 @@ body.status.incident:before {
 /* operational */
 .components-container .component-inner-container.status-green .component-status { color:#00703c; } /* GDS green */
 
+/* use bold font weight for service names */
+.layout-content.status.status-index .components-section .component-container .name {font-weight:700; }
+
 /* reduce the visual weight of the child status items */
 .layout-content.status.status-index .components-section .component-container .child-components-container .component-inner-container .name {
     white-space:unset!important; font-weight:400; color: #505a5f;
 }
-/* use Roman font weight for service names */
-.layout-content.status.status-index .components-section .component-container .name {font-weight:400; }
+
+
+/* incident history page remove underline from arrows */
+
+a.previous-page, a.next-page {text-decoration:none;}
+a.previous-page:hover, a.next-page:hover {background-color: #ffdd00;}
+
+/* make incident text readable for incident history in new non-visualisation layout */
+.container > h4 {font-weight: 700;}
+.month-title {font-size: 1.2rem; font-weight: 700;}
+.incident-history span.small {color:#0b0c0c; font-size: 1.2rem;}
+
